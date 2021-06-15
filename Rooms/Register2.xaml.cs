@@ -80,7 +80,7 @@ namespace Rooms
             try
             {
                 utilizator newUser = register.Valideaza_Inregistrare(username, password, firstname, lastname, confirmpassword, checkInstructor, email);
-                MessageBox.Show("You're now a part of our e-Learning community. Enjoy!");
+                MessageBox.Show("Register worked");
 
 
                 if (newUser.Role.ToString().Equals("Membru"))
