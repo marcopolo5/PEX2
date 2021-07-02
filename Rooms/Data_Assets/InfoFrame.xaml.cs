@@ -11,22 +11,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Rooms.Data_Assets;
+using Rooms.Entity;
 
 namespace Rooms.Data_Assets
 {/// <summary>
  /// Interaction logic for Cards.xaml
  /// </summary>
-    public partial class Cards : UserControl
+    public partial class InfoFrame : UserControl
        {
-        public Cards(Formular formular)
+
+        public InfoFrame() { }
+        public InfoFrame(formular formular)
         {
             InitializeComponent();
-            this.Formular = formular;
+            this.formular = formular;
             this.DataContext = this;
             CourseDescription.Visibility = Visibility.Hidden;
         }
 
-        public Formular Formular { get; set; }
+        public formular formular { get; set; }
 
         public ImageSource Source
         {
@@ -36,7 +39,7 @@ namespace Rooms.Data_Assets
 
         // Using a DependencyProperty as the backing store for Source.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SourceProperty =
-            DependencyProperty.Register("Source", typeof(ImageSource), typeof(Cards));
+            DependencyProperty.Register("Source", typeof(ImageSource), typeof(InfoFrame));
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {

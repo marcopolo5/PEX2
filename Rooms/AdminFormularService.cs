@@ -9,20 +9,14 @@ namespace Rooms
 {
     public class AdminFormularService
     {
-        public List<formular> GetFormulars(utilizator utilizator)
+        public List<formular> GetFormulars()
         {
             using (RoomsContext context = new RoomsContext())
-            {// aici E PROBLEMAAAAAAAAAAAAAAAAAAAAAA
-             // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA LA FORM CUM IL IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                var formulare_utilizator = (from formular in context.Formular
-                                    where formular.id == formular.id
-                                    select new formular()
-                                    {
-                                        id = formular.id,
-                                        studentID = formular.studentID,
-                                        caminID = formular.cameraID,
-                                        nr_pat = formular.nr_pat
-                                    }).ToList();
+
+            { var formulare_utilizator = (from formular in context.Formular select formular).ToList();                      
+
+             
+
                 return formulare_utilizator;
             }
         }

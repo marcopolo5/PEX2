@@ -22,7 +22,8 @@ namespace Rooms
             this.Utilizator = Utilizator;
             this.DB.Content = this.Utilizator.firstname;
             this.DataContext = this;
-            InitializeazFormulare();
+
+           InitializeazFormulare();
         }
 
         private void Open_Form(object sender, RoutedEventArgs e)
@@ -76,10 +77,10 @@ namespace Rooms
         public void InitializeazFormulare()
         {
             AdminFormularService courses = new AdminFormularService();
-            var exploredCourses = courses.GetFormulars(this.Utilizator);
+            var exploredCourses = courses.GetFormulars();
             foreach (var formular in exploredCourses)
             {
-                Cards card = new Cards(formular);
+                InfoFrame card = new InfoFrame(formular);
                 FormulareExploreCount++;
                 if (FormulareExploreCount % 3 == 0)
                 {
@@ -89,7 +90,7 @@ namespace Rooms
                 {
                     FormulareGrid.Height = 300 * (FormulareExploreCount / 3 + 1) + 100;
                 }
-                card.Formular = formular;
+                card.formular = formular;
                 FormulareGrid.Children.Add(card);
 
                 card.MouseDoubleClick += new MouseButtonEventHandler(DoubleClickExploreCourseHandler);

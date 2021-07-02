@@ -128,8 +128,8 @@
       <DependentUpon>Cards.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminFormularService.cs" />
-    <Compile Include="Data_Assets\Cards.xaml.cs">
-      <DependentUpon>Cards.xaml</DependentUpon>
+    <Compile Include="Data_Assets\InfoFrame.xaml.cs">
+      <DependentUpon>InfoFrame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Formular.xaml.cs">
       <DependentUpon>Formular.xaml</DependentUpon>
@@ -156,7 +156,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Data_Assets\Cards.xaml">
+    <Page Include="Data_Assets\InfoFrame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

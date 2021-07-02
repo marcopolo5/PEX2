@@ -33,9 +33,9 @@ namespace Rooms
             this.Hide();
         }
 
-        public static implicit operator Formular(formular v)
+        /*public static implicit operator Formular(formular v)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }
