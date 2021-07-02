@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooms.Entity", "Rooms.Entit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student", "Student\Student.csproj", "{C69F4DEA-F4C2-4499-9320-A0E006BEA98C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card", "Card\Card\Card.csproj", "{3D43D2A6-F548-4C23-AF54-CE382D1B3051}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{C69F4DEA-F4C2-4499-9320-A0E006BEA98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C69F4DEA-F4C2-4499-9320-A0E006BEA98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C69F4DEA-F4C2-4499-9320-A0E006BEA98C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D43D2A6-F548-4C23-AF54-CE382D1B3051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D43D2A6-F548-4C23-AF54-CE382D1B3051}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D43D2A6-F548-4C23-AF54-CE382D1B3051}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D43D2A6-F548-4C23-AF54-CE382D1B3051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
