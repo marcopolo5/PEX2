@@ -20,7 +20,6 @@ namespace Rooms
                 return formulare_utilizator;
             }
         }
-
         
     }
 }

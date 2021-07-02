@@ -21,7 +21,7 @@ namespace Rooms.Data_Assets
        {
 
         public InfoFrame() { }
-        public InfoFrame(formular formular)
+        public InfoFrame(formular formular)//nu clean code
         {
             InitializeComponent();
             this.formular = formular;

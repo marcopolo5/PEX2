@@ -112,6 +112,10 @@
     <Compile Include="Migrations\202107011517187_ModificariFormular.designer.cs">
       <DependentUpon>202107011517187_ModificariFormular.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107021349260_Formular_Status.cs" />
+    <Compile Include="Migrations\202107021349260_Formular_Status.designer.cs">
+      <DependentUpon>202107021349260_Formular_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RoomsContext.cs" />
     <Compile Include="Models\student.cs" />
@@ -180,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011517187_ModificariFormular.resx">
       <DependentUpon>202107011517187_ModificariFormular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107021349260_Formular_Status.resx">
+      <DependentUpon>202107021349260_Formular_Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
