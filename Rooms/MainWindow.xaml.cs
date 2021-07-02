@@ -23,7 +23,7 @@ namespace Rooms
     /// </summary>
     public partial class MainWindow : Window
     {
-        private utilizator utilizator;
+        
 
         public MainWindow(utilizator utilizator)
         {
@@ -31,13 +31,13 @@ namespace Rooms
             InitializeComponent();
 
             this.utilizator = utilizator;
-
-
+            this.DataContext = this;
         }
-
         public MainWindow()
         {
+
         }
+        public utilizator utilizator { get; set; }
 
         Login Login = new Login();
 
@@ -51,33 +51,32 @@ namespace Rooms
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Login.Show();
             Close();
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
 
         }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void administrator_click(object sender, RoutedEventArgs e)
+        private void DespreNoi(object sender, RoutedEventArgs e)
         {
-            var newWindow = new Cod_Administrator();
-            newWindow.ShowDialog();
+            AboutUs about = new AboutUs();
+            about.Show();
+        }
+
+        private void Admin(object sender, RoutedEventArgs e)
+        {
+            Admin_Cod admin_Cod = new Admin_Cod();
+            admin_Cod.Show();
         }
     }
 }

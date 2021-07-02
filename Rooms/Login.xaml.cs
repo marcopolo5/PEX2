@@ -23,15 +23,23 @@ namespace Rooms
     /// </summary>
     public partial class Login : Window
     {
+        private utilizator Utilizator;
         public Login()
         {
             InitializeComponent();
-
+            Utilizator = new utilizator();
         }
+        
         //Register2 register = new Register2();
-        Welcome welcome = new Welcome();
         Register2 register = new Register2();
-        SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
+
+        public void ShowMainWindow(utilizator user)
+        {
+            MainWindow1 mainWindow = new MainWindow1(user);
+            mainWindow.SetUser(user);
+            mainWindow.Show();
+            this.Close();
+        }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -39,54 +47,32 @@ namespace Rooms
             string email = textBoxEmail.Text;
             string password = passwordBox1.Password.ToString();
 
+
             try
             {
-                utilizator autentificare = login.Verificare_User(email, password);
-            }           
+                utilizator loggedUser = login.Verificare_User(email, password);
 
-            catch (Exception exec)
+                if (loggedUser.Role.ToString().Equals("Membru"))
+                {
+                    MainWindow1 mainWindow = new MainWindow1(loggedUser);
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else if (loggedUser.Role.ToString().Equals("Administrator"))
+                {
+                    MainWindowAdmin mainWindowAdmin = new MainWindowAdmin(loggedUser);
+                    mainWindowAdmin.Show();
+                    this.Close();
+                }
+
+            }
+            catch (Exception ex)
             {
                 textBoxEmail.Clear();
                 passwordBox1.Clear();
-                MessageBox.Show(exec.Message);
+                MessageBox.Show(ex.Message);
             }
-/*
-            if (textBoxEmail.Text.Length == 0)
-            {
-                errormessage.Text = "Introdu o adresa de email.";
-                textBoxEmail.Focus();
-            }
-            else if (!Regex.IsMatch(textBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
-            {
-                errormessage.Text = "Introduceti o adresa de email valida.";
-                textBoxEmail.Select(0, textBoxEmail.Text.Length);
-                textBoxEmail.Focus();
-            }
-            else
-            {
-                string email = textBoxEmail.Text;
-                string password = passwordBox1.Password;
-                SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from [utilizator] where email='" + email + "'  and password='" + password + "'", con);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet);
-                if (dataSet.Tables[0].Rows.Count > 0)
-                {
-                    string username = dataSet.Tables[0].Rows[0]["firstname"].ToString() + " " + dataSet.Tables[0].Rows[0]["lastname"].ToString();
-                    welcome.TextBlockName.Text = username;//Sending value from one form to another form.
-                    welcome.Show();
-                    Close();
-                }
-                else
-                {
-                    errormessage.Text = "Contul nu a fost gasit, reincercati !.";
-                }
-                con.Close();
-            }*/
+
         }
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)

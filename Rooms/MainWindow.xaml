@@ -57,7 +57,7 @@
                             FontSize="14"
                             FontWeight="Medium"
                     Grid.Column="1"
-                    Grid.ColumnSpan="3" Height="25" VerticalAlignment="Top" Click="administrator_click">
+                    Grid.ColumnSpan="3" Click="Admin">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -206,7 +206,7 @@
                            Foreground="White"
                            FontSize="25"
                            FontWeight="Medium"
-                           FontFamily="Fonts/Meltix"><Run Text="Fără grijă, o s"/><Run Text="ă avem noi de tine grijă !"/></TextBlock>
+                           FontFamily="Fonts/Meltix"><Run Text="Fără griji, "/><Run Text="avem noi grijă de tine !"/></TextBlock>
 
                 <TextBlock Text="Aplici, completezi, selectezi si te bucuri !"
                            Foreground="White"
@@ -214,7 +214,7 @@
                            FontWeight="Medium"
                            FontFamily="Fonts/Meltix"/>
 
-                <TextBlock Text="No programmer was hurt trough the process of Enity Framework Development"
+                <TextBlock Text="No programmers were hurt through the process of Entity Framework Development"
                            Foreground="White"
                            FontSize="12"
                            FontWeight="Medium"
@@ -231,7 +231,9 @@
                             Foreground="Black"
                             FontSize="14"
                             FontWeight="Medium"
-                            Margin="0,0,10,0" Click="Button_Click">
+                            Margin="0,0,10,0"
+                            Click="DespreNoi"
+                        >
 
                     <Button.Style>
                         <Style TargetType="Button">

@@ -27,25 +27,25 @@ namespace Rooms
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Register2 : Window
+    public partial class Register_Admin : Window
     {
 
-        private utilizator utilizator;
+        public utilizator utilizator;
 
-        public Register2()
+        public Register_Admin()
         {
             InitializeComponent();
             utilizator = new utilizator();
-            SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
+           // SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
 
         }
 
         public void ShowMainWindow(utilizator user)
         {
-            Rooms.MainWindow mainWindow = new MainWindow();
+           /* Rooms.MainWindow mainWindow = new MainWindow();
             mainWindow.SetUser(user);
             mainWindow.Show();
-            this.Close();
+            this.Close();*/
         }
 
 
@@ -55,16 +55,18 @@ namespace Rooms
             string username = EnterUsername.Text;
             string password = EnterPassword.Password.ToString();
             string confirmpassword = ConfirmPassword.Password.ToString();
-            string firstname =EnterName.Text;
-            string lastname = Surnametxt.Text;
+            string firstname = EnterName.Text;
+            string lastname = EnterSurname.Text;
 
             bool checkInstructor;
             if (InstructorRadioBtn.IsChecked == true)
             {
+                MessageBox.Show("sunt aici");
                 checkInstructor = true;
             }
             else
             {
+                MessageBox.Show("sunt aiici");
                 checkInstructor = false;
             }
 
@@ -79,21 +81,24 @@ namespace Rooms
 
             try
             {
+                
                 utilizator newUser = register.Valideaza_Inregistrare(username, password, firstname, lastname, confirmpassword, checkInstructor, email);
-                MessageBox.Show("Register worked");
+                MessageBox.Show("Welcome to our application. Enjoy!");
 
 
                 if (newUser.Role.ToString().Equals("Membru"))
                 {
-                   Rooms.MainWindow  mainWindow = new MainWindow(newUser);
+                    MessageBox.Show("Aici sunt nu ma mai cauta la admin");
+                    MainWindow1 mainWindow = new MainWindow1(utilizator);
                     mainWindow.Show();
                     this.Close();
                 }
                 else if (newUser.Role.ToString().Equals("Administrator"))
                 {
-                    Rooms.Entity.MainWindow mainTrainerView = new Entity.MainWindow(newUser);
-                    mainTrainerView.Show();
-                    this.Close();
+                    MessageBox.Show("Hello aici sunt nu ma mai cauta la membru");
+                    /* Rooms.Entity.cevaceammodificatdinMainWindow mainTrainerView = new Entity.cevaceammodificatdinMainWindow(newUser);
+                     mainTrainerView.Show();
+                     this.Close();*/
                 }
 
             }
@@ -113,13 +118,21 @@ namespace Rooms
         {
             try
             {
+                App.Current.MainWindow.Show();
                 this.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-      
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            this.Hide();
+        }
     }
 }

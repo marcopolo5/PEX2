@@ -108,12 +108,16 @@
     <Compile Include="Migrations\202106141815140_test_rol_user.designer.cs">
       <DependentUpon>202106141815140_test_rol_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011517187_ModificariFormular.cs" />
+    <Compile Include="Migrations\202107011517187_ModificariFormular.designer.cs">
+      <DependentUpon>202107011517187_ModificariFormular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RoomsContext.cs" />
     <Compile Include="Models\student.cs" />
     <Compile Include="Models\utilizator.cs" />
     <Compile Include="ValidationRules\Class1.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="cevaceammodificatdinMainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -125,8 +129,8 @@
     <Compile Include="Models\camera.cs" />
     <Compile Include="Models\camin.cs" />
     <Compile Include="Models\formular.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="cevaceammodificatdinMainWindow.xaml.cs">
+      <DependentUpon>cevaceammodificatdinMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106141815140_test_rol_user.resx">
       <DependentUpon>202106141815140_test_rol_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011517187_ModificariFormular.resx">
+      <DependentUpon>202107011517187_ModificariFormular.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

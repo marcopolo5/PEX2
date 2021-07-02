@@ -70,30 +70,30 @@ namespace Rooms.LoginRegister
         {
             if (password == confirmPassword)
             {
-                //minim 6 caractere maxim 12
+                //min 6 chars, max 12 chars
                 if (password.Length < 6 || password.Length > 12)
                     return false;
 
-                //fara spatii libere
+                //No white space
                 if (password.Contains(" "))
                     return false;
 
-                //1 caracter uppercase
+                //At least 1 upper case letter
                 if (!password.Any(char.IsUpper))
                     return false;
 
-                //1 caracter lowercase
+                //At least 1 lower case letter
                 if (!password.Any(char.IsLower))
                     return false;
 
-                //fara caractere asemanatoare
+                //No two similar chars consecutively
                 for (int i = 0; i < password.Length - 1; i++)
                 {
                     if (password[i] == password[i + 1])
                         return false;
                 }
 
-                //1 caracter special
+                //At least 1 special char
                 string specialCharacters = @"%!@#$%^&*()?/>.<,:;'\|}]{[_~`+=-" + "\"";
                 char[] specialCharactersArray = specialCharacters.ToCharArray();
                 foreach (char c in specialCharactersArray)

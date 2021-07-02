@@ -30,5 +30,10 @@ namespace Rooms.Entity
 
         public virtual ICollection<camera> Camera { get; set; }
         public virtual ICollection<formular> Formular { get; set; }
+
+        public static implicit operator camin(formular v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

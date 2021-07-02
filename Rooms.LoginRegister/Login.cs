@@ -16,18 +16,15 @@ namespace Rooms.LoginRegister
         {
             using (RoomsContext context = new RoomsContext())
             {
-                var verificare = context.Utilizator
-                    .Where(utilizator => (utilizator.email == email)
-                && utilizator.password == password)
-                    .Select(utilizator => utilizator)
-
-                    .Cast<utilizator>();
+                var verificare = context.Utilizator.Where(utilizator =>
+                (utilizator.email == email) && utilizator.password == password).Select(utilizator => utilizator)
+                                    .Cast<utilizator>();
 
                 int nr_verificari = verificare.Count();
 
                 if(nr_verificari!=1)
                         { 
-                     throw new Exception ("bad booo");
+                     throw new Exception ("Anyway....");
                 }
 
                 return verificare.FirstOrDefault();

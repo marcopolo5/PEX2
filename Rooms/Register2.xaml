@@ -8,62 +8,61 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="704" Width="534.275" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid Margin="0,0,0,0"   Background="#FF171F34">
-
         <Border 
-            
             VerticalAlignment="Top"
             Height="590"
             CornerRadius="0 0 90 0" 
             Background="#FF2F3548"
             >
-            <!--<Grid>
-              <Grid.Background>
-                   <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
-                        <GradientStop Color="Gray" Offset="1.5"/>
-                        <GradientStop Color ="#000" Offset ="0"/>
-                    </LinearGradientBrush>
-                </Grid.Background>
-            </Grid> -->
-
         </Border>
-        <RadioButton Visibility="Hidden" Margin="230,370,121,117" Foreground="#132F70" IsChecked="True" Name="InstructorRadioBtn">Membru</RadioButton>
+        <RadioButton Visibility="Hidden" Margin="230,370,121,117" Foreground="#132F70" IsChecked="False" Name="InstructorRadioBtn">Membru</RadioButton>
         <Button
             x:Name="CloseBtn" 
-                    Height="70px" 
-                    Width="70px"
-                    Margin="440,10,20,621"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
-                    materialDesign:ButtonAssist.CornerRadius="40" 
-                    Background="Transparent" 
-                    Foreground="White" 
-                    Content="x" 
-                    FontFamily="Meltix" 
-                    FontSize="40" 
-                    BorderBrush="White"
-            Click="CloseBtn_Click"
-                    />
-        <Button
-            x:Name="BackToLogin" 
-                    Height="70px" 
-                    Width="70px"
-                    Margin="-420,10,20,621"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Height="70"
+                    Margin="428,12,10.4,622"
+                    Style="{StaticResource MaterialDesignToolButton}"
                     materialDesign:ButtonAssist.CornerRadius="10" 
                     Background="Transparent" 
                     Foreground="White" 
-                    Content="LogIn" 
                     FontFamily="Meltix" 
-                    FontSize="15px" 
+                    FontSize="40" 
                     BorderBrush="White"
-            Click="CloseBtn_Click"
-                    />
+                    Click="CloseBtn_Click">
+            <materialDesign:PackIcon 
+                Kind="CloseCircleOutline"
+                Foreground="red" 
+                Width="60" 
+                Height="70" 
+                />
+        </Button>
+        <Button
+            x:Name="BackToLogin"
+            Height="70"
+            Margin="12,15,432,622"
+            Style="{StaticResource MaterialDesignToolButton}"
+            materialDesign:ButtonAssist.CornerRadius="10" 
+            Background="Transparent" 
+            Foreground="White" 
+            FontFamily="Meltix" 
+            FontSize="40" 
+            BorderBrush="White"
+            Click="BackBtn_Click" 
+            ToolTip="Back To Login !"
+            >
+            <materialDesign:PackIcon 
+                Kind="ArrowLeftDropCircleOutline" 
+                Foreground="White" 
+                Width="60"
+                Height="70"/>
+        </Button>
+
         <StackPanel 
             x:Name="RegisterPnl" 
             Width="300" 
             HorizontalAlignment="Left" 
             Margin="102,23,0,133"
             >
-            
+
             <TextBlock
                 x:Name="Registertxt"
                 Text="Register"

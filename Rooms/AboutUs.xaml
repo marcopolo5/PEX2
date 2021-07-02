@@ -1,0 +1,332 @@
+﻿<Window x:Class="Rooms.AboutUs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Rooms"
+        mc:Ignorable="d"
+        Title="AboutUs" Height="550" Width="870" WindowStyle="None" ResizeMode="NoResize"   WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel
+            Height="200"
+            VerticalAlignment="Top"
+            Background="#181e36"
+            >
+            <TextBlock
+                TextAlignment="Center"
+                FontSize="30"
+                FontFamily="Meltix"
+                Foreground="White"
+                >
+                Despre Noi
+            </TextBlock>
+            <TextBlock
+                Foreground="White"
+                FontSize="20"
+                Width="auto"
+                Height="auto"
+                ><InlineUIContainer>
+                    <materialDesign:PackIcon
+                        Kind="Verified"
+                   />
+                </InlineUIContainer>
+                <Run Text=" Tanasie Ana-Maria"/>
+            </TextBlock>
+            <TextBlock
+                Foreground="White"
+                FontSize="20"
+                Width="auto"
+                Height="auto"
+                ><InlineUIContainer>
+                    <materialDesign:PackIcon
+                        Kind="Verified"
+                   />
+                </InlineUIContainer>
+                <Run Text=" Ceolca Paul-Robert"/>
+            </TextBlock>
+            <TextBlock
+                Foreground="White"
+                FontSize="20"
+                Width="auto"
+                Height="auto"
+                ><InlineUIContainer>
+                    <materialDesign:PackIcon
+                        Kind="Verified"
+                   />
+                </InlineUIContainer>
+                <Run Text=" Chivu Georgian"/>
+            </TextBlock>
+            <TextBlock></TextBlock>
+            <TextBlock
+                Foreground="White"
+                TextAlignment="Center"
+                Width="auto"
+                Height="auto"
+                FontSize="15"
+                >
+                Noi suntem cea de-a doua echipa PEX , si suntem aici sa va prezentam 
+                <LineBreak>
+                    
+                </LineBreak>
+                un sistem de managaement al caminelor , fara a te mai stresa cu completarea hartiilor
+                <LineBreak>
+                    
+                </LineBreak>
+                Astfel ca sistemul nostru va va pune la dispozitie un singur formular ce va trebui completat online
+            </TextBlock>
+        </StackPanel>
+        <StackPanel
+            Margin="0,200,0,0"
+            >
+            <materialDesign:Card
+                Width="250"
+                Height="250"
+                Margin="-530,45,0,0"
+                materialDesign:ShadowAssist.ShadowDepth="Depth5"
+                UniformCornerRadius="20"
+                >
+                <StackPanel
+                    Background="LightGray"
+                    >
+                    <StackPanel
+                        Width="auto"
+                        Height="100"
+                        >
+                        <Image
+                        Source="Assets/profil1.jpeg"   >
+                            
+                        </Image>
+                    </StackPanel>
+                    <StackPanel
+                        Height="150"
+                        Background="White"
+                        >
+                        <TextBlock
+                            Height="30"
+                            FontSize="24"
+                            TextAlignment="Center"
+                            >
+                            Tanasie Ana-Maria
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Student
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Universitatea Lucian Blaga
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Sibiu
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Facultatea de Stiinte
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Profil Informatica
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Master An 1
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card
+                Width="250"
+                Height="250"
+                Margin="10,-250,0,0"
+                materialDesign:ShadowAssist.ShadowDepth="Depth5"
+                UniformCornerRadius="20"
+                >
+                <StackPanel
+                    Background="LightGray"
+                    >
+                    <StackPanel
+                        Width="auto"
+                        Height="100"
+                        >
+                        <Image
+                            Source="Assets/profil.jpeg"
+                            Stretch="UniformToFill"
+                            >
+                            
+                        </Image>
+                    </StackPanel>
+                    <StackPanel
+                        Height="150"
+                        Background="White"
+                        >
+                        <TextBlock
+                            Height="30"
+                            FontSize="24"
+                            TextAlignment="Center"
+                            >
+                            Ceolca Paul-Robert
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Student
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Universitatea Lucian Blaga
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Sibiu
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Facultatea de Stiinte
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Profil Informatica
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            An 2
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card
+                Width="250"
+                Height="250"
+                Margin="550,-250,0,0"
+                materialDesign:ShadowAssist.ShadowDepth="Depth5"
+                UniformCornerRadius="20"
+                >
+                <StackPanel
+                    Background="LightGray"
+                    >
+                    <StackPanel
+                        Width="auto"
+                        Height="100"
+                        >
+                        <Image
+                            Source="Assets/profil2.jpeg"
+                            Stretch="UniformToFill"
+                            >
+
+                        </Image>
+                    </StackPanel>
+                    <StackPanel
+                        Height="150"
+                        Background="White"
+                        >
+                        <TextBlock
+                            Height="30"
+                            FontSize="24"
+                            TextAlignment="Center"
+                            >
+                            Chivu Georgian
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Student
+                        </TextBlock>
+                        <TextBlock
+                            Height="20"
+                            FontSize="15"
+                            TextAlignment="Center"
+                            >
+                            Universitatea Lucian Blaga
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Sibiu
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Facultatea de Stiinte
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            Profil Matematica-Informatica
+                        </TextBlock>
+                        <TextBlock
+                            FontSize="15"
+                            Height="20"
+                            TextAlignment="Center"
+                            >
+                            An 2
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+            <Button
+                Width="100"
+                Height="50"
+                Background="Transparent"
+                Foreground="Black"
+                BorderThickness="0"
+                Margin="-770,5,0,0"
+                Click="Back_Click"
+                >
+                <materialDesign:PackIcon
+                    Kind="Close"
+                    Width="90"
+                    Height="50"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center" RenderTransformOrigin="8.578,-9.01"
+                    >
+                    
+                </materialDesign:PackIcon>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
