@@ -15,9 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 //using MySql.Data.MySqlClient;
-//using System.Speech.Recognition;
+using System.Speech.Recognition;
 using System.Text.RegularExpressions;
-//using System.Speech.Synthesis;
+using System.Speech.Synthesis;
 using System.Threading;
 using Rooms.Entity;
 
@@ -29,6 +29,9 @@ namespace Rooms
     /// </summary>
     public partial class Register_Admin : Window
     {
+        SpeechRecognitionEngine spchrec = new SpeechRecognitionEngine();
+        SpeechSynthesizer spchsint = new SpeechSynthesizer();
+        Grammar word = new DictationGrammar();
 
         public utilizator utilizator;
 
@@ -36,11 +39,63 @@ namespace Rooms
         {
             InitializeComponent();
             utilizator = new utilizator();
-           // SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
+
+            // SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
+            Choices commands = new Choices();
+            commands.Add(new string[] { "name", "user", "email", "password", "admin" });
+            GrammarBuilder gbuilder = new GrammarBuilder();
+            gbuilder.Append(commands);
+            Grammar grammar = new Grammar(gbuilder);
+            spchrec.LoadGrammarAsync(grammar);
+            spchrec.SetInputToDefaultAudioDevice();
+            spchrec.SpeechRecognized += spchrec_SpeechRecognized;
+            spchrec.RecognizeAsync(RecognizeMode.Multiple);
+            spchsint.Rate = -3;
+
 
         }
+        void spchrec_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            switch (e.Result.Text)
+            {
+                case "name":
+                    spchsint.SpeakAsync("Please say your name: ");
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    EnterName.Focus();
+                    break;
+                case "surname":
+                    spchsint.SpeakAsync("Please say your surname: ");
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    break;
+                case "user":
+                    spchsint.SpeakAsync("Please say your username: ");
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    break;
+                case "email":
+                    spchsint.SpeakAsync("Please say your email: ");
+                    break;
+                case "password":
+                    spchsint.SpeakAsync("Please say your password: ");
+                    break;
+                case "admin":
+                    this.Close();
+                    break;
+            }
+        }
 
-        public void ShowMainWindow(utilizator user)
+            public void ShowMainWindow(utilizator user)
         {
            /* Rooms.MainWindow mainWindow = new MainWindow();
             mainWindow.SetUser(user);

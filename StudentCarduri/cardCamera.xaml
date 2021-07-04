@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="StudentCarduri.cardCamera"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentCarduri"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+                    d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+        <Border >
+            <materialDesign:Card 
+                materialDesign:ShadowAssist.ShadowDepth="Depth5" 
+                UniformCornerRadius="5"
+                BorderThickness="5"
+                Background="#F6F6F8" 
+                Width="100"
+                Height="100">
+                <Grid>
+                    <Border 
+                        BorderBrush="White" 
+                        CornerRadius="5"
+                        >
+                        <materialDesign:Card 
+                            materialDesign:ShadowAssist.ShadowDepth="Depth5" 
+                            UniformCornerRadius="5" 
+                            BorderThickness="5"
+                            Background="#FF171F34" 
+                            Width="100" 
+                            Height="100"
+                            MouseDoubleClick="insertOption"
+                            >
+                            <StackPanel 
+                                Margin="10"
+                                >
+                                <materialDesign:PackIcon
+                                    Kind="Hotel" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Left"
+                                    />
+                                <TextBlock
+                                    FontWeight="SemiBold" 
+                                    FontSize="15" 
+                                    Text="{Binding camera.nr_camera , StringFormat=Camera: {0}}" 
+                                    Height="18" 
+                                    Margin="0,10,0,0"
+                                    Foreground="White" 
+                                    />
+                                <TextBlock 
+                                    FontWeight="SemiBold" 
+                                    FontSize="15"  
+                                    Text="{Binding camera.nr_paturi, StringFormat=Paturi: {0}}" 
+                                    Height="18" 
+                                    Margin="0,10,0,0"
+                                    Foreground="White"
+                                    />
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </Border>
+                </Grid>
+            </materialDesign:Card>
+        </Border>
+    </Grid>
+</UserControl>

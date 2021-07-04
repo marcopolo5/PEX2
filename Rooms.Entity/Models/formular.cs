@@ -20,9 +20,8 @@ namespace Rooms.Entity
 
         public int cameraID { get; set; }
 
-        public int nr_pat { get; set; }
 
-        public int formular_status { get; set; }
+        public int formular_status { get; set;  }
 
         public virtual camera camera { get; set; }
 

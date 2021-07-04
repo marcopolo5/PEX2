@@ -63,6 +63,7 @@
                 </materialDesign:PackIcon>
             </Button>
             <Button
+                x:Name="FormularButton"
                 Width="30"
                 Height="30"
                 Style="{StaticResource MaterialDesignRaisedButton}"
@@ -75,6 +76,7 @@
                 Click="Open_Form"
                 ToolTip="Formular"
                 ToolTipService.Placement="Top"
+                Visibility="Hidden"
                 >
                 <materialDesign:PackIcon
                     Kind="Text"

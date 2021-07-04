@@ -41,7 +41,8 @@ namespace Rooms.Entity
         [Required]
         [StringLength(50)]
         public string lastname { get; set; }
-       
+
+        public virtual student Student { get; set; }
 
         [Required]
         //[MaxLength(ValidationRules.userMinLength)]

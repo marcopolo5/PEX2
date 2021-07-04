@@ -1,8 +1,8 @@
-﻿using System.Windows;
-using System.Windows.Input;
-using System.Diagnostics;
-using Rooms.Data_Assets;
+﻿using Rooms.Data_Assets;
 using Rooms.Entity;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Rooms
 {
@@ -11,7 +11,7 @@ namespace Rooms
     /// </summary>
     public partial class MainWindowAdmin : Window
     {
-       // private int FormulareCount = 0;
+        // private int FormulareCount = 0;
         private int FormulareExploreCount = 0;
 
         private utilizator Utilizator;
@@ -23,7 +23,7 @@ namespace Rooms
             this.DB.Content = this.Utilizator.firstname;
             this.DataContext = this;
 
-           InitializeazFormulare();
+            InitializeazFormulare();
         }
 
         private void Open_Form(object sender, RoutedEventArgs e)
@@ -84,11 +84,11 @@ namespace Rooms
                 FormulareExploreCount++;
                 if (FormulareExploreCount % 3 == 0)
                 {
-                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3) + 100;
+                    FormulareGrid.Height = 500 * (FormulareExploreCount / 3) + 200;
                 }
                 else
                 {
-                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3 + 1) + 100;
+                    FormulareGrid.Height = 500 * (FormulareExploreCount / 3 + 1) + 200;
                 }
                 card.formular = formular;
                 FormulareGrid.Children.Add(card);
@@ -101,7 +101,7 @@ namespace Rooms
         {
 
             //CourseViewWindow window = new CourseViewWindow(this.Utilizator, ((Cards)sender).);
-           // window.Show();
+            // window.Show();
             this.Close();
         }
 

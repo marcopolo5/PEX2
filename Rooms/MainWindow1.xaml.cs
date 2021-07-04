@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StudentCarduri;
 
 namespace Rooms
 {
@@ -37,22 +38,26 @@ namespace Rooms
 
         private void Open_Form(object sender, RoutedEventArgs e)
         {
-            Formular f = new Formular();
+            StudentCarduri.Formular FORMULAR= new StudentCarduri.Formular(Utilizator);
             this.Close();
-            f.Show();
+            FORMULAR.Show();
         }
 
         private void Open_Map(object sender, RoutedEventArgs e)
         {
-            //test t = new test();
-            //t.Show();
-            this.Hide();
+            /*StudentCarduri.Camine Camine_Harta= new StudentCarduri.Camine(Utilizator);
+            Camine_Harta.Show();
+            this.Hide();*/
+            DateStudent dateStudent = new DateStudent(this.Utilizator);
+            dateStudent.Show();
+           
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Login l = new Login();
-            l.Show();
+            Login variabila_Login = new Login();
+            variabila_Login.Show();
             this.Close();
         }
 
