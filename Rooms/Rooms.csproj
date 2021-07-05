@@ -132,6 +132,9 @@
     <Compile Include="Data_Assets\InfoFrame.xaml.cs">
       <DependentUpon>InfoFrame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditFormUI.xaml.cs">
+      <DependentUpon>EditFormUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Formular.xaml.cs">
       <DependentUpon>Formular.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,7 @@
     <Compile Include="DateStudent.xaml.cs">
       <DependentUpon>DateStudent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServicesModule\FormularService.cs" />
     <Page Include="Admin_Cod.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -163,6 +167,10 @@
     <Page Include="Data_Assets\InfoFrame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditFormUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Formular.xaml">
       <SubType>Designer</SubType>
@@ -273,6 +281,16 @@
     <Resource Include="Assets\profil.jpeg" />
     <Resource Include="Assets\profil1.jpeg" />
     <Resource Include="Assets\profil2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data_Assets\InfoFrameBG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data_Assets\dotsblue" />
+    <None Include="Data_Assets\dotsgrey" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data_Assets\FrameBG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

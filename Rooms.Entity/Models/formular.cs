@@ -5,9 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Rooms.Entity
 {
+
+    public enum Formular_Status
+    {
+        In_Asteptare,
+        Admis,
+        Respins,
+    }
+
     [Table("formular")]
     public class formular
     {
@@ -20,8 +27,8 @@ namespace Rooms.Entity
 
         public int cameraID { get; set; }
 
-
-        public int formular_status { get; set;  }
+                
+        public Formular_Status StareFormular { get; set; }
 
         public virtual camera camera { get; set; }
 

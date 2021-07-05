@@ -52,7 +52,7 @@ namespace StudentCarduri
                         studentID = idUser,
                         caminID = idCamin,
                         cameraID = idCamera,
-                        formular_status = 0
+                        StareFormular = 0
                     });
                     context.SaveChanges();
                     var newId = context.Formular.Max(x => x.id);

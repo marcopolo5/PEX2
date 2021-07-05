@@ -88,20 +88,39 @@ namespace Rooms
                 }
                 else
                 {
-                    FormulareGrid.Height = 500 * (FormulareExploreCount / 3 + 1) + 200;
+                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3 + 1) + 100;
                 }
                 card.formular = formular;
                 FormulareGrid.Children.Add(card);
 
                 card.MouseDoubleClick += new MouseButtonEventHandler(DoubleClickExploreCourseHandler);
+
+                card.MenuItemEdit.Click += new RoutedEventHandler((sender, e) => EditCourseHandler(sender, e, card));
             }
         }
+
+        public void EditCourseHandler(object sender, RoutedEventArgs e, InfoFrame card)
+        {
+            EditFormUI editCourseWindow = new EditFormUI(card.formular);
+            editCourseWindow.ShowDialog();
+
+            card.formular = editCourseWindow.Formular;
+            UpdateEditedCard(card);
+
+        }
+
+        public void UpdateEditedCard(InfoFrame card)
+        {
+            //Conversie valoare tip int din category box in String, nu am solutie
+            card.StareFormularBox.Text = card.formular.StareFormular.ToString();
+        }
+
 
         public void DoubleClickExploreCourseHandler(object sender, MouseButtonEventArgs e)
         {
 
-            //CourseViewWindow window = new CourseViewWindow(this.Utilizator, ((Cards)sender).);
-            // window.Show();
+           // CourseViewWindow window = new CourseViewWindow(this.Utilizator, ((Cards)sender).);
+          //s  window.Show();
             this.Close();
         }
 

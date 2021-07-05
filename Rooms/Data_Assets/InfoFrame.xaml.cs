@@ -26,39 +26,37 @@ namespace Rooms.Data_Assets
             InitializeComponent();
             this.formular = formular;
             this.DataContext = this;
-            CourseDescription.Visibility = Visibility.Hidden;
+            CourseDescription.Visibility = Visibility.Visible;
         }
 
         public formular formular { get; set; }
 
-        /*public ImageSource Source
+        public ImageSource Source
         {
             get { return (ImageSource)GetValue(SourceProperty); }
             set { SetValue(SourceProperty, value); }
-        }*/
+        }
 
-        // Using a DependencyProperty as the backing store for Source.  This enables animation, styling, binding, etc...
-       // public static readonly DependencyProperty SourceProperty =
-          //  DependencyProperty.Register("Source", typeof(ImageSource), typeof(InfoFrame));
+       public static readonly DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(InfoFrame));
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["ClickCourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["ClickAuthorTextTemplate"] as Style;
             CourseDescription.Visibility = Visibility.Visible;
-            CourseNameTxtBlock.Visibility = Visibility.Hidden;
-            AuthorName.Visibility = Visibility.Hidden;
-            //CourseImage.Visibility = Visibility.Hidden;
+            CourseNameTxtBlock.Visibility = Visibility.Visible;
+            AuthorName.Visibility = Visibility.Visible;
+            CourseImage.Visibility = Visibility.Visible;
         }
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["CourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["AuthorTextTemplate"] as Style;
-            CourseDescription.Visibility = Visibility.Hidden;
+            CourseDescription.Visibility = Visibility.Visible;
             CourseNameTxtBlock.Visibility = Visibility.Visible;
             AuthorName.Visibility = Visibility.Visible;
-            //CourseImage.Visibility = Visibility.Visible;
+           CourseImage.Visibility = Visibility.Visible;
         }
 
         private void defaultGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -66,20 +64,37 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Style = this.Resources["ClickCourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["ClickAuthorTextTemplate"] as Style;
             CourseDescription.Visibility = Visibility.Visible;
-            CourseNameTxtBlock.Visibility = Visibility.Hidden;
-            AuthorName.Visibility = Visibility.Hidden;
-            //CourseImage.Visibility = Visibility.Hidden;
+            CourseNameTxtBlock.Visibility = Visibility.Visible;
+            AuthorName.Visibility = Visibility.Visible;
+            CourseImage.Visibility = Visibility.Visible;
         }
 
         private void defaultGrid_MouseLeave(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["CourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["AuthorTextTemplate"] as Style;
-            CourseDescription.Visibility = Visibility.Hidden;
+            CourseDescription.Visibility = Visibility.Visible;
             CourseNameTxtBlock.Visibility = Visibility.Visible;
-            AuthorName.Visibility = Visibility.Visible;
-            //CourseImage.Visibility = Visibility.Visible;
+            AuthorName.Visibility = Visibility.Visible;            
+            CourseImage.Visibility = Visibility.Visible;
         }
 
+        private void PointsImg_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                Image image = sender as Image;
+                ContextMenu contextMenu = image.ContextMenu;
+                contextMenu.PlacementTarget = image;
+                contextMenu.IsOpen = true;
+                e.Handled = true;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

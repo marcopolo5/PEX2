@@ -61,7 +61,7 @@ namespace Rooms
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("nu mere bro");
+                    MessageBox.Show("Datele au fost introduse gresit !");
                 }
                    
                 

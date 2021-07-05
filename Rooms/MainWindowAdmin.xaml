@@ -6,10 +6,10 @@
         xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Rooms"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Title="AdminWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <StackPanel
-            Width="800"
+            Width="1280"
             Height="25"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -59,7 +59,7 @@
         </StackPanel>
         <StackPanel
             Width="200"
-            Height="425"
+            Height="700"
             Margin="0,25,0,0"
             HorizontalAlignment="Left"
             Background="#070065"
