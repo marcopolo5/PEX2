@@ -132,6 +132,10 @@
     <Compile Include="Migrations\202107052313204_FormularLast.designer.cs">
       <DependentUpon>202107052313204_FormularLast.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061737565_FormBGUP.cs" />
+    <Compile Include="Migrations\202107061737565_FormBGUP.designer.cs">
+      <DependentUpon>202107061737565_FormBGUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RoomsContext.cs" />
     <Compile Include="Models\student.cs" />
@@ -215,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107052313204_FormularLast.resx">
       <DependentUpon>202107052313204_FormularLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061737565_FormBGUP.resx">
+      <DependentUpon>202107061737565_FormBGUP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

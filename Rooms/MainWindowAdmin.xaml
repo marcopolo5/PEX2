@@ -111,7 +111,7 @@
                     Width="20"
                     Height="20"
                     Foreground="white"
-                    Margin="-10,0,0,0"
+                    Margin="-20,0,0,0"
                     Kind="map"
                     >
                 </materialDesign:PackIcon>

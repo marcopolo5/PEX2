@@ -8,15 +8,14 @@ namespace Rooms.ServicesModule
     {
         public void UpdateFormular(formular formular)
         {
-            using (RoomsContext roomsContext = new RoomsContext())
+            using (RoomsContext context = new RoomsContext())
             {
-
-                var newStare = roomsContext.Formular.Max(x => x.StareFormular);
-
-                var returnedFormular = roomsContext.Formular.Where(x => x.StareFormular == newStare).ToString();
-
-
-                roomsContext.SaveChanges();
+               formular updateFormular = context.Formular.Where(x => x.id == formular.id).ToList().FirstOrDefault();
+                updateFormular.cameraID = formular.studentID;
+                updateFormular.caminID = formular.caminID;
+                updateFormular.cameraID = formular.cameraID;
+                updateFormular.StareFormular = formular.StareFormular;
+                context.SaveChanges();
             }
         }       
     }

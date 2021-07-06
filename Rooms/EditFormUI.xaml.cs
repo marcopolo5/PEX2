@@ -75,8 +75,20 @@ namespace Rooms
                     ValidateValues();
                     UpdateFormular();
                     formularService.UpdateFormular(formular);//nu se actualizeaza in baza de date....
-                    this.Close();
+
+                using (RoomsContext roomsContext = new RoomsContext())
+                {
+
+                    var newStare = roomsContext.Formular.Max(x => x.StareFormular);
+
+                    var returnedFormular = roomsContext.Formular.Where(x => x.StareFormular == newStare).ToString();
+
+
+                    roomsContext.SaveChanges();
                 }
+
+                this.Close();
+            }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message);

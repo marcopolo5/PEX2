@@ -283,14 +283,9 @@
     <Resource Include="Assets\profil2.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data_Assets\InfoFrameBG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Data_Assets\dotsblue" />
-    <None Include="Data_Assets\dotsgrey" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Data_Assets\FrameBG" />
+    <Resource Include="Data_Assets\bluedots.png" />
+    <Resource Include="Data_Assets\greydots.png" />
+    <Resource Include="Data_Assets\InfoFrameBGN.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

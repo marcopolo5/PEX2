@@ -112,7 +112,7 @@ namespace Rooms
         public void UpdateEditedCard(InfoFrame card)
         {
             //Conversie valoare tip int din category box in String, nu am solutie
-            card.StareFormularBox.Text = card.formular.StareFormular.ToString();
+            card.CourseCategory.Text = card.formular.StareFormular.ToString();
         }
 
 

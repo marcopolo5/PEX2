@@ -31,14 +31,14 @@ namespace Rooms.Data_Assets
 
         public formular formular { get; set; }
 
-        public ImageSource Source
+       /* public ImageSource Source
         {
             get { return (ImageSource)GetValue(SourceProperty); }
             set { SetValue(SourceProperty, value); }
         }
 
        public static readonly DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(InfoFrame));
-
+       */
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["ClickCourseTextTemplate"] as Style;
@@ -47,6 +47,7 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Visibility = Visibility.Visible;
             AuthorName.Visibility = Visibility.Visible;
             CourseImage.Visibility = Visibility.Visible;
+            PointsImg.Visibility = Visibility.Visible;
         }
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
@@ -57,6 +58,8 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Visibility = Visibility.Visible;
             AuthorName.Visibility = Visibility.Visible;
            CourseImage.Visibility = Visibility.Visible;
+            PointsImg.Visibility = Visibility.Visible;
+
         }
 
         private void defaultGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -67,6 +70,8 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Visibility = Visibility.Visible;
             AuthorName.Visibility = Visibility.Visible;
             CourseImage.Visibility = Visibility.Visible;
+            PointsImg.Visibility = Visibility.Visible;
+
         }
 
         private void defaultGrid_MouseLeave(object sender, MouseEventArgs e)
@@ -77,6 +82,8 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Visibility = Visibility.Visible;
             AuthorName.Visibility = Visibility.Visible;            
             CourseImage.Visibility = Visibility.Visible;
+            PointsImg.Visibility = Visibility.Visible;
+
         }
 
         private void PointsImg_MouseDown(object sender, MouseButtonEventArgs e)
@@ -91,10 +98,6 @@ namespace Rooms.Data_Assets
                 e.Handled = true;
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+              
     }
 }

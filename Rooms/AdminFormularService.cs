@@ -13,9 +13,9 @@ namespace Rooms
         {
             using (RoomsContext context = new RoomsContext())
 
-            { var formulare_utilizator = (from formular in context.Formular select formular).ToList();                      
+            {                 var formulare_utilizator = (from formular in context.Formular.Where(x => x.StareFormular == 0).ToList()
+                                                          select formular).ToList();
 
-             
 
                 return formulare_utilizator;
             }
