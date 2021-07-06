@@ -274,9 +274,7 @@
       <Name>StudentCarduri</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\profil.jpeg" />
     <Resource Include="Assets\profil1.jpeg" />
