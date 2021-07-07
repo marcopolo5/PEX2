@@ -1,0 +1,124 @@
+﻿<Window x:Class="Rooms.AdminModule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Rooms"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid
+            Width="200"
+            Background="#070065"
+            HorizontalAlignment="Left"
+            >
+            <Label 
+                Content="Hello ,"
+                Foreground="White"
+                FontSize="30"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,560"
+                Height="50"
+                >
+            </Label>
+            <Label 
+                x:Name="DB"
+                Foreground="White"
+                FontSize="30"
+                HorizontalAlignment="Center"
+                Margin="0,45,0,515"
+                Height="55"
+                Width="150"
+                >
+            </Label>
+            <Label 
+                Content="Welcome !"
+                Foreground="White"
+                FontSize="40"
+                HorizontalAlignment="Center"
+                Margin="5,229,5,301" 
+                Width="190"
+                />
+            <Button
+                Width="50"
+                Height="50"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ButtonAssist.CornerRadius="50" 
+                Background="black"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                BorderThickness="0"
+                Click="Open_Map"
+                ToolTip="Harta" Margin="30,0,0,246" RenderTransformOrigin="0.545,0.3"
+                >
+                <materialDesign:PackIcon
+                    Kind="InfoCircle"
+                    Width="40" 
+                    Height="40" 
+                    Foreground="White"
+                    Margin="-20,-5,-20,-5"
+                    ToolTipService.Placement="Top" RenderTransformOrigin="1.28,-0.58"
+                    >
+                </materialDesign:PackIcon>
+            </Button>
+            <Button
+                x:Name="FormularButton"
+                Width="30"
+                Height="30"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ButtonAssist.CornerRadius="50" 
+                Background="black"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                BorderThickness="0"
+                Margin="0,570,85,0"
+                Click="Open_Form"
+                ToolTip="Formular"
+                ToolTipService.Placement="Top"
+                Visibility="Hidden"
+                >
+                <materialDesign:PackIcon
+                    Kind="Text"
+                    Width="20" 
+                    Height="20" 
+                    Foreground="White"
+                    Margin="-10,0,-10,0"
+                    >
+                </materialDesign:PackIcon>
+            </Button>
+            <Button
+                Width="50"
+                Height="50"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ButtonAssist.CornerRadius="50" 
+                Background="black"
+                HorizontalAlignment="Left"
+                BorderThickness="0" 
+                Margin="120,304,0,0"                  
+                VerticalAlignment="Top"
+                ToolTip="Log Out"
+                ToolTipService.Placement="Top" Click="Button_Click_1"
+                >
+                <materialDesign:PackIcon
+                    Kind="Logout"
+                    Width="40" 
+                    Height="40" 
+                    Foreground="White"
+                    Margin="-20,0,-20,0"
+                    >
+                </materialDesign:PackIcon>
+            </Button>
+        </Grid>
+        <StackPanel
+            x:Name="contentPnl">
+
+        </StackPanel>
+
+        <ScrollViewer Name="Formulare" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="200,90,0,50">
+            <UniformGrid Name="FormulareGrid" Columns="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#F5F5F5">
+
+            </UniformGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>

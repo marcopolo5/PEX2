@@ -20,6 +20,17 @@ namespace Rooms
                 return formulare_utilizator;
             }
         }
-        
+
+        public student GetStudent(int student_id)
+        {
+            using (RoomsContext context = new RoomsContext())
+            {
+                var student_form = (from student in context.Student.Where(x => x.id == student_id)
+                                    select student).FirstOrDefault();
+
+                return student_form;
+            }
+        }
+
     }
 }

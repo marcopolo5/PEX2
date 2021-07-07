@@ -9,13 +9,13 @@ namespace Rooms
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindowAdmin : Window
+    public partial class AdminModule : Window
     {
         // private int FormulareCount = 0;
         private int FormulareExploreCount = 0;
 
         private utilizator Utilizator;
-        public MainWindowAdmin(utilizator Utilizator)
+        public AdminModule(utilizator Utilizator)
         {
             InitializeComponent();
 
@@ -46,28 +46,14 @@ namespace Rooms
             l.Show();
             this.Close();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+                
 
         public void SetUser(utilizator utilizator)
         {
             Debug.WriteLine("set user: user = " + utilizator + " user id = " + utilizator.id);
             this.Utilizator = utilizator;
         }
-        private void guidelineBtn_Click(object sender, RoutedEventArgs e)
-        {
-            mainText.Visibility = Visibility.Hidden;
-            guideLinePnl.Visibility = Visibility.Visible;
-        }
-
-        private void maintextviewBtn_Click(object sender, RoutedEventArgs e)
-        {
-            mainText.Visibility = Visibility.Visible;
-            guideLinePnl.Visibility = Visibility.Hidden;
-        }
+       
 
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -85,11 +71,11 @@ namespace Rooms
                 FormulareExploreCount++;
                 if (FormulareExploreCount % 3 == 0)
                 {
-                    FormulareGrid.Height = 500 * (FormulareExploreCount / 3) + 200;
+                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3)+100;
                 }
                 else
                 {
-                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3 + 1) + 100;
+                    FormulareGrid.Height = 300 * (FormulareExploreCount / 3 + 1)+100;
                 }
                 card.formular = formular;
                 FormulareGrid.Children.Add(card);
@@ -120,8 +106,8 @@ namespace Rooms
         public void DoubleClickExploreCourseHandler(object sender, MouseButtonEventArgs e)
         {
 
-           // CourseViewWindow window = new CourseViewWindow(this.Utilizator, ((Cards)sender).);
-          //s  window.Show();
+            // CourseViewWindow window = new CourseViewWindow(this.Utilizator, ((Cards)sender).);
+            //s  window.Show();
             this.Close();
         }
 

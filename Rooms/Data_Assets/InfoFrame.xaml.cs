@@ -21,44 +21,54 @@ namespace Rooms.Data_Assets
        {
 
         public InfoFrame() { }
-        public InfoFrame(formular formular)//nu clean code
+
+        public student student { get; set; }
+        public InfoFrame(formular formular, student student)//nu clean code da e important
         {
             InitializeComponent();
             this.formular = formular;
+            this.student = student;
+            
             this.DataContext = this;
             CourseDescription.Visibility = Visibility.Visible;
         }
 
         public formular formular { get; set; }
+      
 
-       /* public ImageSource Source
+       public ImageSource Source
         {
             get { return (ImageSource)GetValue(SourceProperty); }
             set { SetValue(SourceProperty, value); }
         }
 
        public static readonly DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(InfoFrame));
-       */
+       
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["ClickCourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["ClickAuthorTextTemplate"] as Style;
             CourseDescription.Visibility = Visibility.Visible;
-            CourseNameTxtBlock.Visibility = Visibility.Visible;
-            AuthorName.Visibility = Visibility.Visible;
-            CourseImage.Visibility = Visibility.Visible;
-            PointsImg.Visibility = Visibility.Visible;
+            CourseNameTxtBlock.Visibility = Visibility.Hidden;
+            MedieTxtBlock.Visibility = Visibility.Hidden;
+            CourseNameTxtBlock.Foreground = new SolidColorBrush(Colors.White);
+            AuthorName.Visibility = Visibility.Hidden;
+            CourseImage.Visibility = Visibility.Hidden;
+            PointsImg.Source = new BitmapImage(new Uri("/Data_Assets/settings.png", UriKind.Relative));
+
         }
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             CourseNameTxtBlock.Style = this.Resources["CourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["AuthorTextTemplate"] as Style;
-            CourseDescription.Visibility = Visibility.Visible;
+            CourseDescription.Visibility = Visibility.Hidden;
             CourseNameTxtBlock.Visibility = Visibility.Visible;
+            MedieTxtBlock.Visibility = Visibility.Visible;
+            CourseNameTxtBlock.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#2e3349"));
             AuthorName.Visibility = Visibility.Visible;
-           CourseImage.Visibility = Visibility.Visible;
-            PointsImg.Visibility = Visibility.Visible;
+            CourseImage.Visibility = Visibility.Visible;
+            PointsImg.Source = new BitmapImage(new Uri("/Data_Assets/settings.png", UriKind.Relative));
 
         }
 
@@ -67,10 +77,13 @@ namespace Rooms.Data_Assets
             CourseNameTxtBlock.Style = this.Resources["ClickCourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["ClickAuthorTextTemplate"] as Style;
             CourseDescription.Visibility = Visibility.Visible;
-            CourseNameTxtBlock.Visibility = Visibility.Visible;
-            AuthorName.Visibility = Visibility.Visible;
-            CourseImage.Visibility = Visibility.Visible;
-            PointsImg.Visibility = Visibility.Visible;
+            CourseNameTxtBlock.Visibility = Visibility.Hidden;
+            MedieTxtBlock.Visibility = Visibility.Hidden;
+            CourseNameTxtBlock.Foreground = new SolidColorBrush(Colors.White);
+
+            AuthorName.Visibility = Visibility.Hidden;
+            CourseImage.Visibility = Visibility.Hidden;
+            PointsImg.Source = new BitmapImage(new Uri("/Data_Assets/settings.png", UriKind.Relative));
 
         }
 
@@ -78,11 +91,13 @@ namespace Rooms.Data_Assets
         {
             CourseNameTxtBlock.Style = this.Resources["CourseTextTemplate"] as Style;
             AuthorName.Style = this.Resources["AuthorTextTemplate"] as Style;
-            CourseDescription.Visibility = Visibility.Visible;
+            CourseDescription.Visibility = Visibility.Hidden;
             CourseNameTxtBlock.Visibility = Visibility.Visible;
-            AuthorName.Visibility = Visibility.Visible;            
+            MedieTxtBlock.Visibility = Visibility.Visible;
+            AuthorName.Visibility = Visibility.Visible;
+            CourseNameTxtBlock.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#2e3349"));
             CourseImage.Visibility = Visibility.Visible;
-            PointsImg.Visibility = Visibility.Visible;
+            PointsImg.Source = new BitmapImage(new Uri("/Data_Assets/settings.png", UriKind.Relative));
 
         }
 

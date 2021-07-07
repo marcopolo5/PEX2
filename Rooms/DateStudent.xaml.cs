@@ -52,9 +52,9 @@ namespace Rooms
                 {
                     foreach(Window window in Application.Current.Windows)
 {
-                        if (window.GetType() == typeof(MainWindow1))
+                        if (window.GetType() == typeof(StudentModule))
                         {
-                            (window as MainWindow1).FormularButton.Visibility = Visibility.Visible;
+                            (window as StudentModule).FormularButton.Visibility = Visibility.Visible;
                         }
                     }
                     this.Close();

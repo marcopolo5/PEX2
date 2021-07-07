@@ -30,12 +30,11 @@ namespace Rooms
             Utilizator = new utilizator();
         }
         
-        //Register2 register = new Register2();
-        Register2 register = new Register2();
+        Register_Student register = new Register_Student();
 
         public void ShowMainWindow(utilizator user)
         {
-            MainWindow1 mainWindow = new MainWindow1(user);
+            StudentModule mainWindow = new StudentModule(user);
             mainWindow.SetUser(user);
             mainWindow.Show();
             this.Close();
@@ -54,13 +53,13 @@ namespace Rooms
 
                 if (loggedUser.Role.ToString().Equals("Membru"))
                 {
-                    MainWindow1 mainWindow = new MainWindow1(loggedUser);
+                    StudentModule mainWindow = new StudentModule(loggedUser);
                     mainWindow.Show();
                     this.Close();
                 }
                 else if (loggedUser.Role.ToString().Equals("Administrator"))
                 {
-                    MainWindowAdmin mainWindowAdmin = new MainWindowAdmin(loggedUser);
+                    AdminModule mainWindowAdmin = new AdminModule(loggedUser);
                     mainWindowAdmin.Show();
                     this.Close();
                 }
@@ -74,7 +73,6 @@ namespace Rooms
             }
 
         }
-
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
             register.Show();

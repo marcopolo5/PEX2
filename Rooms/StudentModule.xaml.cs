@@ -23,10 +23,10 @@ namespace Rooms
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow1 : Window
+    public partial class StudentModule : Window
     {
         private utilizator Utilizator;
-        public MainWindow1(utilizator Utilizator)
+        public StudentModule(utilizator Utilizator)
         {
             InitializeComponent();
            

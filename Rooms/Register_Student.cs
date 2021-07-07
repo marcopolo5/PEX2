@@ -27,7 +27,7 @@ namespace Rooms
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Register_Admin : Window
+    public partial class Register_Student : Window
     {
         SpeechRecognitionEngine spchrec = new SpeechRecognitionEngine();
         SpeechSynthesizer spchsint = new SpeechSynthesizer();
@@ -35,7 +35,7 @@ namespace Rooms
 
         public utilizator utilizator;
 
-        public Register_Admin()
+        public Register_Student()
         {
             InitializeComponent();
             utilizator = new utilizator();
@@ -95,12 +95,12 @@ namespace Rooms
             }
         }
 
-            public void ShowMainWindow(utilizator user)
+        public void ShowMainWindow(utilizator user)
         {
-           /* Rooms.MainWindow mainWindow = new MainWindow();
+          Rooms.MainWindow mainWindow = new MainWindow();
             mainWindow.SetUser(user);
             mainWindow.Show();
-            this.Close();*/
+            this.Close();
         }
 
 
@@ -116,12 +116,12 @@ namespace Rooms
             bool checkInstructor;
             if (InstructorRadioBtn.IsChecked == true)
             {
-                MessageBox.Show("sunt aici");
+                
                 checkInstructor = true;
             }
             else
             {
-                MessageBox.Show("sunt aiici");
+               
                 checkInstructor = false;
             }
 
@@ -138,22 +138,20 @@ namespace Rooms
             {
                 
                 utilizator newUser = register.Valideaza_Inregistrare(username, password, firstname, lastname, confirmpassword, checkInstructor, email);
-                MessageBox.Show("Welcome to our application. Enjoy!");
+                MessageBox.Show("Welcome to Rooms 404. Enjoy!");
 
 
                 if (newUser.Role.ToString().Equals("Membru"))
                 {
-                    MessageBox.Show("Aici sunt nu ma mai cauta la admin");
-                    MainWindow1 mainWindow = new MainWindow1(utilizator);
+                    StudentModule mainWindow = new StudentModule(utilizator);
                     mainWindow.Show();
                     this.Close();
                 }
                 else if (newUser.Role.ToString().Equals("Administrator"))
                 {
-                    MessageBox.Show("Hello aici sunt nu ma mai cauta la membru");
-                    /* Rooms.Entity.cevaceammodificatdinMainWindow mainTrainerView = new Entity.cevaceammodificatdinMainWindow(newUser);
-                     mainTrainerView.Show();
-                     this.Close();*/
+                    AdminModule adminModule = new AdminModule(utilizator);
+                    adminModule.Show();
+                    this.Close();                 
                 }
 
             }
@@ -185,8 +183,8 @@ namespace Rooms
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Login l = new Login();
-            l.Show();
+            Login login = new Login();
+            login.Show();
             this.Hide();
         }
     }

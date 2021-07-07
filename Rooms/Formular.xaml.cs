@@ -33,6 +33,11 @@ namespace Rooms
             this.Hide();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         /*public static implicit operator Formular(formular v)
         {
             throw new NotImplementedException();

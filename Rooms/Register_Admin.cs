@@ -27,12 +27,12 @@ namespace Rooms
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Register2 : Window
+    public partial class Register_Admin : Window
     {
 
         public utilizator utilizator;
 
-        public Register2()
+        public Register_Admin()
         {
             InitializeComponent();
             utilizator = new utilizator();
