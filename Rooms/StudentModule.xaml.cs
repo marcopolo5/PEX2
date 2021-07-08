@@ -26,15 +26,46 @@ namespace Rooms
     public partial class StudentModule : Window
     {
         private utilizator Utilizator;
+        int nr_camera, nr_camin;
         public StudentModule(utilizator Utilizator)
+       
         {
             InitializeComponent();
-           
-                this.Utilizator = Utilizator;
-                this.DB.Content = this.Utilizator.firstname;
-                this.DataContext = this;
+            this.Utilizator = Utilizator;
+            this.DB.Content = this.Utilizator.firstname;
+            this.DataContext = this;
+            ShowFormStats();
             
         }
+
+        public int GetStareFormular()
+        {
+            using (RoomsContext context = new RoomsContext())
+            {
+
+                var returneaza_form_conditionat = (from formular in context.Formular
+                                                   where formular.StareFormular == Formular_Status.Admis
+                                                   && formular.studentID == Utilizator.id
+                                                   select formular).FirstOrDefault();
+
+                if (returneaza_form_conditionat != null)
+                {
+
+                    nr_camera = (returneaza_form_conditionat).cameraID;
+                   nr_camin = (returneaza_form_conditionat).caminID;
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+
+                }
+            }              
+
+        }
+
+        
 
         private void Open_Form(object sender, RoutedEventArgs e)
         {
@@ -72,6 +103,28 @@ namespace Rooms
             this.Utilizator = utilizator;
         }
 
+
+        //Show room and camin
+        public void ShowFormStats()
+        {
+            if (GetStareFormular() == 1)
+            {
+                StareFormularUI.Content = "Admis";
+                NrCamera.Content = "Camera: " + nr_camera.ToString();
+                NrCamin.Content = "Camin: " + nr_camin.ToString();
+            }
+            else if(GetStareFormular()==0)
+            {
+                StareFormularUI.Content = "Asteptare";
+            }          
+            else{
+                StareFormularUI.Content = "Respins";
+
+            }
+                      
+        }
+        
+                
     }
 }
 

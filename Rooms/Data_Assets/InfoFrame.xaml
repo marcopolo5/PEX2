@@ -92,14 +92,13 @@
             <Image Name="PointsImg" Source="/Data_Assets/settings.png" Cursor="Hand" ToolTip="Options" MouseDown="PointsImg_MouseDown" HorizontalAlignment="Left" Margin="235,255,0,0" VerticalAlignment="Top" Width="25" Height="25">
                 <Image.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Edit" Name="MenuItemEdit" />
-                        <MenuItem Header="Delete" Name="MenuItemDelete"/>
+                        <MenuItem Header="Procesare Formular" Name="MenuItemEdit" />
                     </ContextMenu>
                 </Image.ContextMenu>
             </Image>
         </Button>
         <Grid Name="defaultGrid" Margin="25,32,25,18" Width="250" Height="250" MouseEnter="defaultGrid_MouseEnter" MouseLeave="defaultGrid_MouseLeave">
-            <Image Name="CourseImage" Source="/Data_Assets/settings.png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Height="147" Width="234"/>
+            <Image Name="CourseImage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Height="147" Width="234"/>
             <TextBlock Name="CourseNameTxtBlock" Text="{Binding student.nume}"   Margin="10,178,0,0" Style="{StaticResource CourseTextTemplate}" Height="42" Width="230"/>
             <TextBlock Name="MedieTxtBlock" Text="{Binding student.medie, StringFormat='Media:  \{0\}'}"   Margin="10,153,0,0" Style="{StaticResource MedieTextTemplate}" Height="40" Width="230"/>
             <TextBlock Name="AuthorName"  Text="{Binding student.prenume}" Margin="10,225,0,-10" Style="{StaticResource CourseTextTemplate}" Width="200" Height="35"/>

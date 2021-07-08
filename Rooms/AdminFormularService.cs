@@ -13,10 +13,11 @@ namespace Rooms
         {
             using (RoomsContext context = new RoomsContext())
 
-            {                 var formulare_utilizator = (from formular in context.Formular.Where(x => x.StareFormular == 0).ToList()
-                                                          select formular).ToList();
-
-
+            { var formulare_utilizator = (from formular in context.Formular
+                                          join student in context.Student on formular.studentID equals student.id
+                                          where formular.StareFormular == 0
+                                          orderby student.medie descending select formular).ToList();
+                                     
                 return formulare_utilizator;
             }
         }

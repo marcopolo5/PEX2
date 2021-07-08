@@ -109,6 +109,31 @@
                     >
                 </materialDesign:PackIcon>
             </Button>
+            <Label 
+                x:Name="StareFormularUI"
+                Foreground="White"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Margin="42,460,42,100"
+                Height="40"
+                Width="116"
+                />
+            <Label 
+                x:Name="NrCamera"
+                Foreground="White"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Margin="42,545,42,25"
+                Width="116"
+                />
+            <Label 
+                x:Name="NrCamin"
+                Foreground="White"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Margin="42,505,42,65"
+                Width="116"
+                />
         </Grid>
         <StackPanel
             x:Name="contentPnl"

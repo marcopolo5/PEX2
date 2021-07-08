@@ -127,7 +127,7 @@
             Style="{StaticResource MaterialDesignFlatButton}"
             materialDesign:ShadowAssist.ShadowDepth="Depth5"
             Content="Submit"
-            Foreground="Black"
+            Foreground="Black" Click="Button_Click"
             >
         </Button>
     </Grid>
