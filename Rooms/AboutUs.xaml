@@ -246,11 +246,12 @@
                         Height="100"
                         >
                         <Image
-                            Source="Assets/profil2.jpeg"
-                            Stretch="UniformToFill"
-                            >
+                            Source="Assets/profil3.png"
+                            Stretch="Uniform"
+                            
+                            Margin="0,-65,0,0"
 
-                        </Image>
+                            />
                     </StackPanel>
                     <StackPanel
                         Height="150"

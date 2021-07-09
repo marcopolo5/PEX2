@@ -31,16 +31,23 @@ namespace Rooms
 
         Register_Admin register_Admin = new Register_Admin();
 
-        MainWindow mainWindow = new MainWindow();
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             if (textboxAdminCode.Text == "495836")
             {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Close();
+
                 register_Admin.Show();
                 this.Hide();
-                mainWindow.Hide();
-            }    
-        }
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Codul introdus este gresit, reincercati !");
+            }
+            
+        }    
+        
     }
 }
