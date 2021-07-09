@@ -27,7 +27,6 @@ namespace Rooms.Entity
 
         public int cameraID { get; set; }
 
-                
         public Formular_Status StareFormular { get; set; }
 
         public virtual camera camera { get; set; }

@@ -98,7 +98,7 @@
                 Margin="120,304,0,0"                  
                 VerticalAlignment="Top"
                 ToolTip="Log Out"
-                ToolTipService.Placement="Top" Click="Button_Click_1"
+                ToolTipService.Placement="Top" Click="logoutBtn_Click"
                 >
                 <materialDesign:PackIcon
                     Kind="Logout"

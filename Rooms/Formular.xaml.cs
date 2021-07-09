@@ -28,14 +28,12 @@ namespace Rooms
 
         private void goto_HartaClick(object sender, RoutedEventArgs e)
         {
-            //Harta h = new Harta();
-           // h.Show();
-            this.Hide();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            
         }
 
         /*public static implicit operator Formular(formular v)

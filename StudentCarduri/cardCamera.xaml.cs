@@ -27,18 +27,19 @@ namespace StudentCarduri
     {
         private utilizator Utilizator;
         private camin Camin;
-        public cardCamera(camera Camera, camin caminn, utilizator Utilizator)
+        public cardCamera(camera Camera, camin caminn, utilizator Utilizator,student student)
         {
             InitializeComponent();
             this.camera = Camera;
             this.Camin = caminn;
             this.DataContext = this;
             this.Utilizator = Utilizator;
+            this.Student = student;
             this.DataContext = this;
 
         }
         public camera camera { get; set; }
-
+        public student Student { get; set; }
 
         private void insertOption(object sender, MouseButtonEventArgs e)
         {
@@ -47,7 +48,7 @@ namespace StudentCarduri
                 DataFormular form = new DataFormular();
                 form.VerificareFormular(this.Utilizator.id, this.Camin.id, camera.id);
 
-                FormularStudent formular = new FormularStudent(this.Utilizator, this.Camin, this.camera);
+                FormularStudent formular = new FormularStudent(this.Utilizator, this.Camin, this.camera,this.Student);
                 formular.Show();
                 foreach (var camereWindow in Application.Current.Windows)
                 {

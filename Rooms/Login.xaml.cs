@@ -24,6 +24,7 @@ namespace Rooms
     public partial class Login : Window
     {
         private utilizator Utilizator;
+        private student student;
         public Login()
         {
             InitializeComponent();
@@ -34,12 +35,13 @@ namespace Rooms
 
         public void ShowMainWindow(utilizator user)
         {
-            StudentModule mainWindow = new StudentModule(user);
+            StudentModule mainWindow = new StudentModule(user,student);
             mainWindow.SetUser(user);
             mainWindow.Show();
             this.Close();
         }
 
+        
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             Rooms.LoginRegister.Login login = new LoginRegister.Login();
@@ -50,10 +52,13 @@ namespace Rooms
             try
             {
                 utilizator loggedUser = login.Verificare_User(email, password);
+                AdminFormularService adminFormularService = new AdminFormularService();
+
+                student = adminFormularService.GetStudent(loggedUser.id);
 
                 if (loggedUser.Role.ToString().Equals("Membru"))
                 {
-                    StudentModule mainWindow = new StudentModule(loggedUser);
+                    StudentModule mainWindow = new StudentModule(loggedUser,student);
                     mainWindow.Show();
                     this.Close();
                 }
@@ -79,5 +84,11 @@ namespace Rooms
             Close();
         }
 
+        private void Button_Click_BackToMain(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

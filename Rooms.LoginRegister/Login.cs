@@ -24,7 +24,7 @@ namespace Rooms.LoginRegister
 
                 if(nr_verificari!=1)
                         { 
-                     throw new Exception ("Anyway....");
+                     throw new Exception ("Email sau Parola Invalide ! Reincercati !");
                 }
 
                 return verificare.FirstOrDefault();

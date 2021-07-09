@@ -25,11 +25,13 @@ namespace StudentCarduri
     public partial class Camine : Window
     {
         public utilizator Utilizator;
+        public student Student;
         private int myCaminCount = 0;
-        public Camine(utilizator Utilizator)
+        public Camine(utilizator Utilizator, student student)
         {
             InitializeComponent();
             this.Utilizator = Utilizator;
+            this.Student = student;
             DataFormular camin = new DataFormular();
 
             var camine = camin.GetCamin();
@@ -37,7 +39,7 @@ namespace StudentCarduri
             foreach (var cam in camine)
             {
 
-                cardCamin card = new cardCamin(cam, this.Utilizator);
+                cardCamin card = new cardCamin(cam, this.Utilizator,this.Student);
                 myCaminCount++;
                 if (myCaminCount % 3 == 0)
                 {

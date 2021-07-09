@@ -35,17 +35,10 @@ namespace Rooms
 
         private void Open_Map(object sender, RoutedEventArgs e)
         {
-            //test t = new test();
-            //t.Show();
-            this.Hide();
+            AdminToolTip adminToolTip = new AdminToolTip();
+            adminToolTip.Show();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Login l = new Login();
-            l.Show();
-            this.Close();
-        }
+               
                 
 
         public void SetUser(utilizator utilizator)
@@ -57,6 +50,8 @@ namespace Rooms
 
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 

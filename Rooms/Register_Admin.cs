@@ -31,6 +31,7 @@ namespace Rooms
     {
 
         public utilizator utilizator;
+        public student student;
 
         public Register_Admin()
         {
@@ -61,12 +62,10 @@ namespace Rooms
             bool checkInstructor;
             if (InstructorRadioBtn.IsChecked == true)
             {
-                MessageBox.Show("sunt aici");
                 checkInstructor = true;
             }
             else
             {
-                MessageBox.Show("sunt aiici");
                 checkInstructor = false;
             }
 
@@ -81,24 +80,25 @@ namespace Rooms
 
             try
             {
-                
+                AdminFormularService adminFormularService = new AdminFormularService();
+
+                student = adminFormularService.GetStudent(utilizator.id);
+
                 utilizator newUser = register.Valideaza_Inregistrare(username, password, firstname, lastname, confirmpassword, checkInstructor, email);
-                MessageBox.Show("Welcome to our application. Enjoy!");
+                MessageBox.Show("Welcome to Rooms 404. Enjoy!");
 
 
                 if (newUser.Role.ToString().Equals("Administrator"))
                 {
-                    MessageBox.Show("Aici sunt nu ma mai cauta la admin");
-                    MainWindowAdmin mainWindow = new MainWindowAdmin(utilizator);
+                    AdminModule mainWindow = new AdminModule(utilizator);
                     mainWindow.Show();
                     this.Close();
                 }
                 else if (newUser.Role.ToString().Equals("Membru"))
                 {
-                    MessageBox.Show("Hello aici sunt nu ma mai cauta la membru");
-                    /* Rooms.Entity.cevaceammodificatdinMainWindow mainTrainerView = new Entity.cevaceammodificatdinMainWindow(newUser);
-                     mainTrainerView.Show();
-                     this.Close();*/
+                    StudentModule mainWindow = new StudentModule(utilizator,student);
+                    mainWindow.Show();
+                    this.Close();
                 }
 
             }

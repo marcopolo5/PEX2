@@ -34,66 +34,100 @@ namespace Rooms
         Grammar word = new DictationGrammar();
 
         public utilizator utilizator;
+        public student student;
 
         public Register_Student()
         {
             InitializeComponent();
             utilizator = new utilizator();
 
+
             // SqlConnection con = new SqlConnection("Data Source=ZEROLEGION\\SQLEXPRESS;Initial Catalog=Rooms404Last; integrated security=SSPI");
             Choices commands = new Choices();
-            commands.Add(new string[] { "name", "user", "email", "password", "admin" });
+            commands.Add(new string[] { "first", "second", "user", "email", "password", "repeat password", "admin" });
             GrammarBuilder gbuilder = new GrammarBuilder();
             gbuilder.Append(commands);
             Grammar grammar = new Grammar(gbuilder);
-            spchrec.LoadGrammarAsync(grammar);
+           /* spchrec.LoadGrammarAsync(grammar);
             spchrec.SetInputToDefaultAudioDevice();
             spchrec.SpeechRecognized += spchrec_SpeechRecognized;
             spchrec.RecognizeAsync(RecognizeMode.Multiple);
-            spchsint.Rate = -3;
+           // spchsint.Rate = -3;
+          //  spchsint.Volume = 10;*/
 
 
         }
-        void spchrec_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        /*void spchrec_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             switch (e.Result.Text)
             {
-                case "name":
-                    spchsint.SpeakAsync("Please say your name: ");
+                case "first":
+                    spchsint.SpeakAsync("Please enter your name: ");
+                    Thread.Sleep(2000);
                     if (spchrec.AudioState != AudioState.Speech)
                     {
                         spchrec.RequestRecognizerUpdate();
-                        Thread.Sleep(2000);
                     }
                     EnterName.Focus();
                     break;
-                case "surname":
-                    spchsint.SpeakAsync("Please say your surname: ");
+                case "second":
+                    spchsint.SpeakAsync("Please enter your surname: ");
+                    Thread.Sleep(2000);
                     if (spchrec.AudioState != AudioState.Speech)
                     {
                         spchrec.RequestRecognizerUpdate();
-                        Thread.Sleep(2000);
                     }
+                    EnterSurname.Focus();
                     break;
                 case "user":
-                    spchsint.SpeakAsync("Please say your username: ");
+                    spchsint.SpeakAsync("Please enter your username: ");
+                    Thread.Sleep(2000);
                     if (spchrec.AudioState != AudioState.Speech)
                     {
                         spchrec.RequestRecognizerUpdate();
                         Thread.Sleep(2000);
                     }
+                    EnterUsername.Focus();
                     break;
                 case "email":
-                    spchsint.SpeakAsync("Please say your email: ");
+                    spchsint.SpeakAsync("Please enter your email: ");
+                    Thread.Sleep(2000);
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    EnterEmail.Focus();
                     break;
                 case "password":
-                    spchsint.SpeakAsync("Please say your password: ");
+                    spchsint.SpeakAsync("Please enter your password: ");
+                    Thread.Sleep(2000);
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    EnterPassword.Focus();
+                    break;
+                case "repeat password":
+                    spchsint.SpeakAsync("Please reenter the password: ");
+                    Thread.Sleep(2000);
+                    if (spchrec.AudioState != AudioState.Speech)
+                    {
+                        spchrec.RequestRecognizerUpdate();
+                        Thread.Sleep(2000);
+                    }
+                    ConfirmPassword.Focus();
                     break;
                 case "admin":
+                    Admin_Cod administrator = new Admin_Cod();
+                    administrator.Show();
                     this.Close();
+                    spchrec.RecognizeAsyncStop();
+                    spchsint.Pause();
                     break;
             }
-        }
+        }*/
 
         public void ShowMainWindow(utilizator user)
         {
@@ -140,10 +174,13 @@ namespace Rooms
                 utilizator newUser = register.Valideaza_Inregistrare(username, password, firstname, lastname, confirmpassword, checkInstructor, email);
                 MessageBox.Show("Welcome to Rooms 404. Enjoy!");
 
+                AdminFormularService adminFormularService = new AdminFormularService();
+
+                student = adminFormularService.GetStudent(utilizator.id);
 
                 if (newUser.Role.ToString().Equals("Membru"))
                 {
-                    StudentModule mainWindow = new StudentModule(utilizator);
+                    StudentModule mainWindow = new StudentModule(utilizator,student);
                     mainWindow.Show();
                     this.Close();
                 }

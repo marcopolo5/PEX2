@@ -23,19 +23,21 @@ namespace StudentCarduri
         public int myCameraCount = 0;
         public camin Camin;
         public utilizator Utilizator;
-        public Camere(camin Camin, utilizator Utilizator)
+        public student Student { get; set; }
+        public Camere(camin Camin, utilizator Utilizator,student student)
         {
 
             InitializeComponent();
             DataFormular camera = new DataFormular();
             this.Camin = Camin;
             this.Utilizator = Utilizator;
+            this.Student = student;
             var camere = camera.GetCamere(this.Camin.id);
 
             foreach (var came in camere)
             {
 
-                cardCamera card = new cardCamera(came, this.Camin, this.Utilizator);
+                cardCamera card = new cardCamera(came, this.Camin, this.Utilizator,this.Student);
                 myCameraCount++;
                 if (myCameraCount % 3 == 0)
                 {

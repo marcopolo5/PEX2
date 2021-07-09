@@ -25,23 +25,34 @@ namespace StudentCarduri
         // public utilizator Utilizator;
 
 
-        public FormularStudent(utilizator Utilizator, camin Camin, camera Camera)
+        public FormularStudent(utilizator Utilizator, camin Camin, camera Camera, student student)
         {
             InitializeComponent();
             this.camera = Camera;
             this.camin = Camin;
             this.utilizator = Utilizator;
+            this.Student = student;
             this.DataContext = this;
+            this.numeU.Content = this.utilizator.firstname;
+            this.email.Content = this.utilizator.email;
+            this.medie.Content = student.medie;
+            this.facultate.Content = student.facultate;
         }
 
 
         public camera camera { get; set; }
         public camin camin { get; set; }
         public utilizator utilizator { get; set; }
-
-        private void goto_HartaClick(object sender, RoutedEventArgs e)
+        public student Student { get; set; }
+    
+    private void goto_HartaClick(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

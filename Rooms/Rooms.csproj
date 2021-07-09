@@ -119,6 +119,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminToolTip.xaml.cs">
+      <DependentUpon>AdminToolTip.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Cod.xaml.cs">
       <DependentUpon>Admin_Cod.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <DependentUpon>DateStudent.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicesModule\FormularService.cs" />
+    <Page Include="AdminToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Admin_Cod.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -292,6 +299,9 @@
   <ItemGroup>
     <Resource Include="Data_Assets\bluedots.png" />
     <Resource Include="Data_Assets\greydots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data_Assets\editicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

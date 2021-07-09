@@ -26,12 +26,16 @@ namespace Rooms
     public partial class StudentModule : Window
     {
         private utilizator Utilizator;
+       
+        private student student;
+
         int nr_camera, nr_camin;
-        public StudentModule(utilizator Utilizator)
+        public StudentModule(utilizator Utilizator, student student)
        
         {
             InitializeComponent();
             this.Utilizator = Utilizator;
+            this.student = student;
             this.DB.Content = this.Utilizator.firstname;
             this.DataContext = this;
             ShowFormStats();
@@ -65,12 +69,34 @@ namespace Rooms
 
         }
 
-        
+        public int GetStareFormular2()
+        {
+            using (RoomsContext context = new RoomsContext())
+            {
+
+                var returneaza_form_conditionat = (from formular in context.Formular
+                                                   where formular.StareFormular == Formular_Status.Respins
+                                                   && formular.studentID == Utilizator.id
+                                                   select formular).FirstOrDefault();
+
+                if (returneaza_form_conditionat != null)
+                {                
+
+
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+
+                }
+            }
+
+        }
 
         private void Open_Form(object sender, RoutedEventArgs e)
         {
-            StudentCarduri.Formular FORMULAR= new StudentCarduri.Formular(Utilizator);
-            this.Close();
+            StudentCarduri.Formular FORMULAR= new StudentCarduri.Formular(Utilizator, student);
             FORMULAR.Show();
         }
 
@@ -113,12 +139,12 @@ namespace Rooms
                 NrCamera.Content = "Camera: " + nr_camera.ToString();
                 NrCamin.Content = "Camin: " + nr_camin.ToString();
             }
-            else if(GetStareFormular()==0)
+            else if(GetStareFormular2()==1)
             {
-                StareFormularUI.Content = "Asteptare";
+                StareFormularUI.Content = "Respins";
             }          
             else{
-                StareFormularUI.Content = "Respins";
+                StareFormularUI.Content = "In Asteptare";
 
             }
                       

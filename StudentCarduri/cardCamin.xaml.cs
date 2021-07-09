@@ -21,18 +21,20 @@ namespace StudentCarduri
     public partial class cardCamin : UserControl
     {
         private utilizator Utilizator;
-        public cardCamin(camin caminn, utilizator Utilizator)
+        public student Student;
+        public cardCamin(camin caminn, utilizator Utilizator,student student)
         {
             InitializeComponent();
             this.camin = caminn;
             this.DataContext = this;
             this.Utilizator = Utilizator;
+            this.Student = student;
         }
         public camin camin { get; set; }
 
         private void vizualizareCamere(object sender, MouseButtonEventArgs e)
         {
-            Camere camere = new Camere(this.camin, this.Utilizator);
+            Camere camere = new Camere(this.camin, this.Utilizator,this.Student);
             camere.Show();
             foreach (var camineWindow in Application.Current.Windows)
             {

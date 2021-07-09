@@ -31,10 +31,10 @@
                             <Trigger Property="IsDefaulted" Value="True">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
+                            <!--<Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#132F70"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#132F70"/>
-                            </Trigger>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#132F70"/> 
+                            </Trigger> -->
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#132F70"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="#132F70"/>
@@ -88,8 +88,8 @@
     </UserControl.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Button Style="{DynamicResource ButtonStyle}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-            <Image Name="PointsImg" Source="/Data_Assets/settings.png" Cursor="Hand" ToolTip="Options" MouseDown="PointsImg_MouseDown" HorizontalAlignment="Left" Margin="235,255,0,0" VerticalAlignment="Top" Width="25" Height="25">
+        <Button Style="{DynamicResource ButtonStyle}">
+            <Image Name="PointsImg" Source="/Data_Assets/editicon.png" Cursor="Hand" ToolTip="Options" MouseDown="PointsImg_MouseDown" HorizontalAlignment="Left" Margin="220,225,0,0" VerticalAlignment="Top" Width="55" Height="55">
                 <Image.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="Procesare Formular" Name="MenuItemEdit" />
@@ -97,13 +97,14 @@
                 </Image.ContextMenu>
             </Image>
         </Button>
-        <Grid Name="defaultGrid" Margin="25,32,25,18" Width="250" Height="250" MouseEnter="defaultGrid_MouseEnter" MouseLeave="defaultGrid_MouseLeave">
+        <Grid Margin="25,32,25,18" Width="250" Height="250" >
             <Image Name="CourseImage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Height="147" Width="234"/>
             <TextBlock Name="CourseNameTxtBlock" Text="{Binding student.nume}"   Margin="10,178,0,0" Style="{StaticResource CourseTextTemplate}" Height="42" Width="230"/>
             <TextBlock Name="MedieTxtBlock" Text="{Binding student.medie, StringFormat='Media:  \{0\}'}"   Margin="10,153,0,0" Style="{StaticResource MedieTextTemplate}" Height="40" Width="230"/>
+            <TextBlock Name="CameraCamin" Text="{Binding formular.cameraID, StringFormat='Camera:  \{0\}'}"   Margin="10,133,0,0" Style="{StaticResource MedieTextTemplate}" Height="40" Width="230"/>
             <TextBlock Name="AuthorName"  Text="{Binding student.prenume}" Margin="10,225,0,-10" Style="{StaticResource CourseTextTemplate}" Width="200" Height="35"/>
-            <TextBlock Name="CourseDescription" TextWrapping="Wrap" Text="{Binding formular.caminID ,StringFormat='Camin ales:  \{0\}'}" Foreground="#2e3349" FontSize="20" Margin="10,108,10,103"/>
-            <TextBlock Name="CourseCategory" Text="{Binding formular.StareFormular, StringFormat='Raspuns:  \{0\}'}" Foreground="#2e3349" FontSize="20" Margin="10,10,10,147"/>
+            <TextBlock Name="CourseDescription" TextWrapping="Wrap" Text="{Binding formular.caminID ,StringFormat='Camin ales:  \{0\}'}" Foreground="#2e3349" FontSize="20" Margin="10,89,10,122"/>
+            <TextBlock Name="CourseCategory" Text="{Binding formular.StareFormular, StringFormat='Raspuns:  \{0\}'}" Foreground="#2e3349" FontSize="20" Margin="10,10,10,212"/>
         </Grid>
     </Grid>
 </UserControl>

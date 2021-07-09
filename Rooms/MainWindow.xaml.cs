@@ -29,17 +29,18 @@ namespace Rooms
         {
 
             InitializeComponent();
-
             this.utilizator = utilizator;
             this.DataContext = this;
         }
         public MainWindow()
         {
+            App.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
         }
         public utilizator utilizator { get; set; }
 
         Login Login = new Login();
+
 
         public void SetUser(utilizator utilizator)
         {
@@ -55,7 +56,8 @@ namespace Rooms
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Login.Show();
-            Close();
+
+           Hide();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
